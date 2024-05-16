@@ -1,0 +1,105 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #262642 !important;
+  color: #f2f2f2;
+}
+*/ body h1 {
+  font-size: 50px;
+  font-weight: bold; /* Nilai font-weight untuk tebal ekstra */
+}
+body h2 {
+  font-size: 40px;
+  font-weight: bold; /* Nilai font-weight untuk tebal ekstra */
+}
+body h4 {
+  font-size: 20px;
+}
+body p {
+  font-size: 18px;
+}
+.navbar {
+  background-color: #262642 !important;
+  color: white !important;
+}
+.sosial-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.sosial-media-item {
+  margin: 0 5px;
+}
+
+.sosial-media-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+  color: #f2f2f2;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sosial-media-link:hover {
+  background-color: #e0e0e0;
+}
+
+.sosial-media-link img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.sosial-media .active {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.sosial-media .active:hover {
+  background-color: #3b5998;
+}
+
+.sosial-media .active img {
+  filter: brightness(0) invert(1);
+}
+
+.container {
+  margin-top: 50px;
+  display: block; /* Pastikan konten non-teks adalah blok */
+  position: relative;
+}
+
+.gambar-profile {
+  position: absolute;
+  top: 130px; /* Menggeser ke posisi y 199px */
+  left: 250px; /* Menggeser ke posisi x 350px */
+}
+
+.gambar-profile img {
+  width: 438px; /* Lebar elemen */
+  height: 500px; /* Tinggi elemen */
+  z-index: 1; /* Tumpukan di atas teks */
+}
+
+.nama {
+  position: absolute;
+  top: 100px; /* Atur posisi vertikal teks */
+  left: 20px; /* Atur posisi horizontal teks */
+  z-index: 2; /* Tumpukan di atas gambar */
+}
+
+.content-introduction {
+  margin-top: 230px;
+  margin-left: 100px;
+  padding-bottom: 157px;
+}
+
+/* skill */
+.skill {
+  background-color: white;
+}
