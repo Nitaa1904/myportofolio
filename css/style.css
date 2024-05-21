@@ -1,9 +1,9 @@
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #262642 !important;
-  color: #f2f2f2;
+  color: #f2f2f2 !important;
 }
-*/ body h1 {
+body h1 {
   font-size: 50px;
   font-weight: bold; /* Nilai font-weight untuk tebal ekstra */
 }
@@ -100,6 +100,54 @@ body p {
 }
 
 /* skill */
-.skill {
-  background-color: white;
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Mengatur konten secara horizontal ke tengah */
+  align-items: center; /* Mengatur konten secara vertikal ke tengah */
+  height: 100%;
+  text-align: center;
+}
+.card-container {
+  display: flex;
+  overflow-x: hidden;
+  gap: 20px; /* Adds space between cards */
+  padding: 10px; /* Optional: Adds padding around the container */
+  white-space: nowrap;
+}
+.card {
+  display: inline-block;
+  width: 18rem;
+}
+
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px; /* Adds space between cards */
+  padding: 10px; /* Optional: Adds padding around the container */
+}
+.card {
+  flex: 0 0 auto;
+  width: 18rem;
+  display: inline-block;
+}
+/* Optional: Custom scrollbar styles */
+.card-container::-webkit-scrollbar {
+  height: 10px;
+}
+.card-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.card-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.card-body {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.card-body .btn {
+  margin-top: auto;
 }
