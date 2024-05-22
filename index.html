@@ -23,65 +23,38 @@
 
   <body>
     <!-- Nav -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+      <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="img/nita.png" alt="Bootstrap" width="30" height="24">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Skill</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Experience</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Education</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Contact
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">WhatsApp</a></li>
+                          <li><a class="dropdown-item" href="#">Email</a></li>
+                      </ul>
+                  </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
+          </div>
       </div>
-    </nav>
+  </nav>
 
     <section class="container-fluid">
       <div class="introduction">
@@ -94,29 +67,30 @@
                     Nita Fitrotul <br />
                     Mar'ah
                   </h1>
+                  <hr class="custom-hr">
                   <div class="sosial-media">
-                    <ul class="sosial-media ms-auto">
-                      <li class="sosial-media-item">
-                        <a class="sosial-media active" href="#">
-                          <img src="facebook-icon.png" alt="Facebook" />
-                        </a>
-                      </li>
-                      <li class="sosial-media-item">
-                        <a class="sosial-media-link" href="#">
-                          <img src="twitter-icon.png" alt="Twitter" />
-                        </a>
-                      </li>
-                      <li class="sosial-media-item">
-                        <a class="sosial-media-link" href="#">
-                          <img src="instagram-icon.png" alt="Instagram" />
-                        </a>
-                      </li>
-                      <li class="sosial-media-item">
-                        <a class="sosial-media-link" href="#">
-                          <img src="youtube-icon.png" alt="YouTube" />
-                        </a>
-                      </li>
-                    </ul>
+                      <ul class="sosial-media ms-auto">
+                          <li class="sosial-media-item">
+                              <a class="sosial-media-link" href="#">
+                                  <img src="img/fb.png" alt="Facebook" class="img-fluid" />
+                              </a>
+                          </li>
+                          <li class="sosial-media-item">
+                              <a class="sosial-media-link" href="#">
+                                  <img src="img/ig.png" alt="Instagram" class="img-fluid" />
+                              </a>
+                          </li>
+                          <li class="sosial-media-item">
+                              <a class="sosial-media-link" href="#">
+                                  <img src="img/LinkedIn.png" alt="LinkedIn" class="img-fluid" />
+                              </a>
+                          </li>
+                          <li class="sosial-media-item">
+                              <a class="sosial-media-link" href="#">
+                                  <img src="img/email.png" alt="Email" class="img-fluid" />
+                              </a>
+                          </li>
+                      </ul>
                   </div>
                 </div>
                 <div class="gambar-profile">
@@ -129,7 +103,7 @@
                 <h4>introduction</h4>
                 <h2>
                   Web Developer <br />
-                  based in Purwokerto
+                  based in Purwokerto 
                 </h2>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -143,19 +117,41 @@
           </div>
         </div>
       </div>
-
       <div class="skill">
+        <div class="container justify-content-center align-items-center">
+          <div class="skill-deskripsi">
+            <h2>What I am Capable of?</h2>
+          </div>
+          <div class="row">
+            <div class="col">
+              <img src="https://placehold.co/5x5" alt="..." />
+            </div>
+            <div class="col">
+              <img src="https://placehold.co/5x5" alt="..." />
+            </div>
+            <div class="col">
+              <img src="https://placehold.co/5x5" alt="..." />
+            </div>
+            <div class="col">
+              <img src="https://placehold.co/5x5" alt="..." />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- service -->
+      <div class="service">
         <div class="container">
           <div class="row">
-            <div class="col-12 d-flex justify-content-center">
-              <div>Services of my skills</div>
+            <div class="col-12 justify-content-end">
+              <div class="text-right" >Services of my skills</div>
             </div>
-            <div class="col-12 col-md-4">
+            <div
+              class="col-12 col-md-4 d-flex justify-content-center align-items-center"
+            >
               <h2>
                 My Services <br />For Help <br />
                 Your Business
               </h2>
-              <button type="button" class="btn btn-danger">See More</button>
             </div>
             <div class="col-12 col-md-8">
               <div class="card-container" id="cardContainer">
@@ -171,7 +167,9 @@
                       Some quick example text to build on the card title and
                       make up the bulk of the card's content.
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <button type="button" class="btn btn-danger">
+                      See More
+                    </button>
                   </div>
                 </div>
                 <div class="card">
@@ -186,7 +184,9 @@
                       Some quick example text to build on the card title and
                       make up the bulk of the card's content.
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <button type="button" class="btn btn-danger">
+                      See More
+                    </button>
                   </div>
                 </div>
                 <div class="card">
@@ -201,7 +201,9 @@
                       Some quick example text to build on the card title and
                       make up the bulk of the card's content.
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <button type="button" class="btn btn-danger">
+                      See More
+                    </button>
                   </div>
                 </div>
               </div>
@@ -218,12 +220,13 @@
               <h2>Selected Project</h2>
               <p>My experience in building several projects</p>
             </div>
-            <div class="col-auto d-flex justify-content-end">
-              <a href="#" class="btn btn-primary btn-block">Certification</a>
-              <a href="#" class="btn btn-secondary btn-block ml-2">Project</a>
+            <div class="col d-flex d-flex justify-content-end">
+              <div class="text-right">
+                <a href="#" class="btn btn-transparent btn-block">Project</a>
+                <a href="#" class="btn btn-transparent btn-block">Certification</a>
+              </div>
             </div>
           </div>
-
           <div class="row">
             <div class="col">
               <div class="card text-right" style="width: 25rem; height: 30rem">
@@ -279,86 +282,77 @@
           </div>
         </div>
       </div>
-      <!-- <div class="project">
-        <div class="container">
-          <div class="selected-project">
-            <div class="container text-center">
-              <div class="row">
-                <div class="col">
-                  <h2>Selected Project</h2>
-                  <p>My experience in building several projects</p>
-                </div>
-                <div class="col">
-                  <a href="#" class="btn btn-primary">Certification</a>
-                  <a href="#" class="btn btn-secondary">Project</a>
-                </div>
-              </div>
-            </div>
-            <div class="container text-center">
-              <div class="row d-flex justify-content-center">
-                <div class="col-md-4">
-                  <div class="card" style="width: 25rem; height: 30rem">
-                    <img
-                      src="https://placehold.co/600x400"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title text-white">Lorem</h5>
-                      <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card" style="width: 25rem; height: 30rem">
-                    <img
-                      src="https://placehold.co/600x400"
-                      class="card-img-top"
-                      alt="..."
-                    />
-                    <div class="card-body">
-                      <h5 class="card-title text-white">Lorem</h5>
-                      <p class="card-text">
-                        This is a longer card with supporting text below as a
-                        natural lead-in to additional content. This content is a
-                        little bit longer.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
       <div class="story">
         <div class="container">
-          <div class="container text-center">
-            <!-- Columns are always 50% wide, on mobile and desktop -->
             <div class="row">
-              <div class="col-6">
-                <h2>Education And <br />Organization</h2>
-              </div>
-              <div class="col-6">
-                <h5>SMA N 1 SUMPIUH</h5>
-                <p>
-                  <b>Jurusan MIPA</b> <br />
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Corporis autem tenetur cum, quae quos hic sunt adipisci
-                  laudantium voluptatem quidem doloribus laborum id iusto, at
-                  molestias saepe deleniti? Quo, numquam?
-                </p>
-              </div>
+                <div class="col-12 d-flex justify-content-end">
+                    <div class="text-right">
+                        <a href="#" class="btn btn-transparent btn-block">Education</a>
+                        <a href="#" class="btn btn-transparent btn-block">Organization</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                    <h2>Education And <br />Organization</h2>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="isi">
+                    <h4 class="text-start">Institut Teknologi Telkom Purwokerto</h4s>
+                    <h6 class="text-start">Jurusan Software Engineering</h6>
+                    <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <hr class="custom-hr">
+                  </div>
+                  <div class="isi">
+                    <h4 class="text-start">Institut Teknologi Telkom Purwokerto</h4>
+                    <h6 class="text-start">Jurusan Software Engineering</h6>
+                    <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <hr class="custom-hr">
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </section>
+
+    <footer>
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 text-md-left">
+              <h2>
+                IT'S NOT NOW <br />THEN <br />
+                WHEN
+              </h2>
+            </div>
+            <div class="col-md-6 text-md-left">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <button type="button" class="btn btn-danger">Let’s Talk</button>
+            </div>
+          </div>
+        </div>
+        <hr class="custom-hr">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <img src="img/nita.png" alt="" width="30" height="24">
+            </div>
+            <div class="col text-center">
+              <a href="#" class="text-link">Project</a>
+              <a href="#" class="text-link">My Story</a>
+              <a href="#" class="text-link">Blog</a>
+          </div>
+            <div class="col d-flex justify-content-end">
+              <p class="text-md-right">Copyright@nitaaa2024</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
     <!-- JS -->
     <script
