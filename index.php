@@ -28,6 +28,8 @@ if ($conn->connect_error) {
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    
   </head>
 
   <body>
@@ -236,19 +238,6 @@ if ($conn->connect_error) {
         } else {
             echo "0 results";
         }
-
-        // Mengambil data dari tabel sertifikat
-        $sql_sertifikat = "SELECT * FROM sertifikat";
-        $result_sertifikat = $conn->query($sql_sertifikat);
-
-        $sertifikat = [];
-        if ($result_sertifikat->num_rows > 0) {
-            while($row_sertifikat = $result_sertifikat->fetch_assoc()) {
-                $sertifikat[] = $row_sertifikat;
-            }
-        } else {
-            echo "0 results";
-        }
         ?>
         <div class="container">
             <div class="row">
@@ -264,90 +253,53 @@ if ($conn->connect_error) {
                 </div>
             </div>
             <div id="projek-section" class="content-section active">
-                <div class="row">
-                    <div class="col">
-                    <?php foreach($services as $projek): ?>
-                        <div class="card text-right" style="width: 25rem; height: 30rem">
-                            <img src="<?php echo htmlspecialchars($projek['image_url']); ?>" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title text-white"><?php echo htmlspecialchars($projek['title']); ?></h5>
-                                <p class="card-text">
-                                <?php echo htmlspecialchars($projek['deskripsi']); ?>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 25rem; height: 30rem">
-                            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title text-white">Lorem</h5>
-                                <p class="card-text">
-                                    This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a
-                                    little bit longer.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 25rem; height: 30rem">
-                            <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title text-white">Lorem</h5>
-                                <p class="card-text">
-                                    This is a longer card with supporting text below as a
-                                    natural lead-in to additional content. This content is a
-                                    little bit longer.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <div class="row">
+                  <?php foreach($services as $projek): ?>
+                      <div class="col-md-4 mb-4"> <!-- col-md-4 akan membagi row menjadi 3 kolom, mb-4 memberikan margin bawah -->
+                          <div class="card text-right" style="width: 100%; height: 30rem">
+                              <img src="<?php echo htmlspecialchars($projek['image_url']); ?>" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                  <h5 class="card-title text-white"><?php echo htmlspecialchars($projek['title']); ?></h5>
+                                  <p class="card-text">
+                                      <?php echo htmlspecialchars($projek['deskripsi']); ?>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  <?php endforeach; ?>
+              </div>
             </div>
+            <?php
+            // Mengambil data dari tabel sertifikat
+            $sql_sertifikat = "SELECT * FROM sertifikat";
+            $result_sertifikat = $conn->query($sql_sertifikat);
+
+            $sertifikat = [];
+            if ($result_sertifikat->num_rows > 0) {
+                while($row_sertifikat = $result_sertifikat->fetch_assoc()) {
+                    $sertifikat[] = $row_sertifikat;
+                }
+            } else {
+                echo "0 results";
+            }
+            ?>
             <div id="sertifikat-section" class="content-section">
               <div class="row">
-                <div class="col">
-                    <div class="card text-right" style="width: 25rem; height: 30rem">
-                        <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">DICODING</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a
-                                natural lead-in to additional content. This content is a
-                                little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 25rem; height: 30rem">
-                        <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Lorem</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a
-                                natural lead-in to additional content. This content is a
-                                little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 25rem; height: 30rem">
-                        <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Lorem</h5>
-                            <p class="card-text">
-                                This is a longer card with supporting text below as a
-                                natural lead-in to additional content. This content is a
-                                little bit longer.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </div>
+                  <?php foreach($services as $index => $sertifikat): ?>
+                      <div class="col-md-4 mb-4"> <!-- col-md-4 untuk membagi baris menjadi tiga kolom pada layar medium dan lebih besar -->
+                          <div class="card text-right" style="width: 100%; height: 30rem">
+                              <img src="<?php echo htmlspecialchars($sertifikat['image_url']); ?>" class="card-img-top" alt="...">
+                              <div class="card-body">
+                                  <h5 class="card-title text-white"><?php echo htmlspecialchars($sertifikat['title']); ?></h5>
+                                  <p class="card-text">
+                                      <?php echo htmlspecialchars($sertifikat['description']); ?>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                  <?php endforeach; ?>
+              </div>
+          </div>
         </div>
       </div>
       <div class="story" id="story">
@@ -468,8 +420,8 @@ if ($conn->connect_error) {
           selectedSection.classList.add('active');
       }
     </script>
-    <?php
-    $conn->close();
-    ?>
   </body>
 </html>
+<?php
+$conn->close();
+?>
