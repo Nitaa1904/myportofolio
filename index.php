@@ -29,7 +29,12 @@ if ($conn->connect_error) {
       rel="stylesheet"
     />
 
-    
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(section + '-section').classList.add('active');
+        }
+    </script>
   </head>
 
   <body>
@@ -166,7 +171,7 @@ if ($conn->connect_error) {
               </div>
               <div class="row">
                   <?php foreach($images as $image_url): ?>
-                      <div class="col-md-3">
+                      <div class="col-md">
                           <div class="skill-item">
                               <img src="<?php echo htmlspecialchars($image_url); ?>" class="img-fluid" alt="Skill Image">
                           </div>
@@ -208,7 +213,7 @@ if ($conn->connect_error) {
             <div class="col-12 col-md-8">
               <div class="card-container" id="cardContainer">
                 <?php foreach($services as $service): ?>
-                <div class="card">
+                <div class="card" style="width: 18rem;">
                   <img src="<?php echo htmlspecialchars($service['image_url']); ?>" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title"><?php echo htmlspecialchars($service['title']); ?></h5>
@@ -316,45 +321,38 @@ if ($conn->connect_error) {
                 </div>
                 <div class="col-12 col-md-6">
                     <div id="education-section" class="content-section active">
-                        <div class="isi">
-                            <h4 class="text-start">Institut Teknologi Telkom Purwokerto</h4>
-                            <h6 class="text-start">Jurusan Software Engineering</h6>
-                            <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <hr class="custom-hr">
-                        </div>
-                        <div class="isi">
-                            <h4 class="text-start">Institut Teknologi Telkom Purwokerto</h4>
-                            <h6 class="text-start">Jurusan Software Engineering</h6>
-                            <p class="text-start">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <hr class="custom-hr">
-                        </div>
+                      <?php
+                          $sql = "SELECT * FROM Education";
+                          $result = $conn->query($sql);
+
+                          if ($result->num_rows > 0) {
+                              while($row = $result->fetch_assoc()) {
+                                  echo '<div class="isi">';
+                                  echo '<h4 class="text-start">' . $row["institution"] . '</h4>';
+                                  echo '<h6 class="text-start">' . $row["department"] . '</h6>';
+                                  echo '<p class="text-start">' . $row["description"] . '</p>';
+                                  echo '<hr class="custom-hr">';
+                                  echo '</div>';
+                              }
+                          }
+                          ?>
                     </div>
                     <div id="organization-section" class="content-section scrollable">
-                        <div class="isi">
-                            <h4 class="text-start">Organization Name 1</h4>
-                            <h6 class="text-start">Role</h6>
-                            <p class="text-start">Description of your role and achievements in the organization.</p>
-                            <hr class="custom-hr">
-                        </div>
-                        <div class="isi">
-                            <h4 class="text-start">Organization Name 2</h4>
-                            <h6 class="text-start">Role</h6>
-                            <p class="text-start">Description of your role and achievements in the organization.</p>
-                            <hr class="custom-hr">
-                        </div>
-                        <div class="isi">
-                            <h4 class="text-start">Organization Name 3</h4>
-                            <h6 class="text-start">Role</h6>
-                            <p class="text-start">Description of your role and achievements in the organization.</p>
-                            <hr class="custom-hr">
-                        </div>
-                        <div class="isi">
-                            <h4 class="text-start">Organization Name 4</h4>
-                            <h6 class="text-start">Role</h6>
-                            <p class="text-start">Description of your role and achievements in the organization.</p>
-                            <hr class="custom-hr">
-                        </div>
-                        <!-- Add more organization items as needed -->
+                        <?php
+                        $sql = "SELECT * FROM Organization";
+                        $result = $conn->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo '<div class="isi">';
+                                echo '<h4 class="text-start">' . $row["name"] . '</h4>';
+                                echo '<h6 class="text-start">' . $row["role"] . '</h6>';
+                                echo '<p class="text-start">' . $row["description"] . '</p>';
+                                echo '<hr class="custom-hr">';
+                                echo '</div>';
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

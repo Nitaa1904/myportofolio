@@ -131,11 +131,14 @@ body p {
   position: absolute;
   top: 130px; /* Menggeser ke posisi y 199px */
   left: 250px; /* Menggeser ke posisi x 350px */
+  width: 100%; /* Sesuaikan dengan kebutuhan lebar kontainer */
+  max-width: 400px; /* Atau tetapkan ukuran maksimum yang diinginkan */
 }
 
 .gambar-profile img {
-  width: 438px; /* Lebar elemen */
-  height: 500px; /* Tinggi elemen */
+  width: 100%; /* Gambar akan menyesuaikan dengan lebar kontainer induknya */
+  height: auto; /* Menjaga rasio aspek gambar */
+  display: block; /* Menghilangkan celah di bawah gambar jika menggunakan inline-block */
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
 }
 
@@ -149,7 +152,7 @@ body p {
 .content-introduction {
   margin-top: 230px;
   margin-left: 100px;
-  padding-bottom: 137px;
+  padding-bottom: 33px;
 }
 /* CSS untuk elemen content-introduction */
 .skill {
@@ -226,13 +229,6 @@ body p {
   height: 100%;
   text-align: center;
 }
-.card-container {
-  display: flex;
-  overflow-x: hidden;
-  gap: 20px; /* Adds space between cards */
-  padding: 10px; /* Optional: Adds padding around the container */
-  white-space: nowrap;
-}
 .card {
   width: 18rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -244,8 +240,6 @@ body p {
 }
 
 .card-container {
-  display: flex;
-  overflow-x: auto;
   gap: 40px; /* Adds space between cards */
   padding: 20px; /* Optional: Adds padding around the container */
 }
