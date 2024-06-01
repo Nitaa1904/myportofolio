@@ -1,152 +1,70 @@
-<?php 
-session_start();
-include_once("koneksi.php");
-
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nita Fitrotul Mar'ah</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-
-    <script>
-        function showSection(section) {
-            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
-            document.getElementById(section + '-section').classList.add('active');
-        }
-    </script>
-  </head>
-
-  <body>
-    <!-- Nav -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-      <div class="container">
-          <a class="navbar-brand" href="#">
-              <img src="img/13.png" alt="Bootstrap" width="50" height="50">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#introduction">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#skill">Skill</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#service">Service</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#projek">Experience</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="#story">Education</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Contact
-                      </a>
-                      <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="https://wa.me/6288239561942">WhatsApp</a></li>
-                          <li><a class="dropdown-item" href="mailto: nitafitrotul1904@gmail.com">Email</a></li>
-                      </ul>
-                  </li>
-              </ul>
-          </div>
-      </div>
-    </nav>
+<?php include_once("inc_header.php")?>
+<?php include_once("koneksi.php")?>
     <section class="container-fluid">
-      <div class="introduction" id="introduction">
-        <?php
-        // Mengambil data dari tabel introduction
-        $sql = "SELECT * FROM introduction LIMIT 1";
-        $result = $conn->query($sql);
+    <div class="introduction" id="introduction">
+    <?php
+    // Mengambil data dari tabel introduction
+    $sql = "SELECT * FROM introduction LIMIT 1";
+    $result = $conn->query($sql);
 
-        if ($result->num_rows > 0) {
-            // Mengambil data
-            $row = $result->fetch_assoc();
-        } else {
-            echo "0 results";
-        }
+    if ($result->num_rows > 0) {
+        // Mengambil data
+        $row = $result->fetch_assoc();
         ?>
         <div class="container">
-          <div class="row">
-            <div class="col">
-              <div class="content">
-                <div class="nama">
-                  <h1>
-                    <?php echo htmlspecialchars($row['nama']); ?>
-                  </h1>
-                  <hr class="custom-hr">
-                  <div class="sosial-media">
-                      <ul class="sosial-media ms-auto">
-                          <li class="sosial-media-item">
-                              <a class="sosial-media-link" href="#">
-                                  <img src="img/fb.png" alt="Facebook" class="img-fluid" />
-                              </a>
-                          </li>
-                          <li class="sosial-media-item">
-                              <a class="sosial-media-link" href="#">
-                                  <img src="img/ig.png" alt="Instagram" class="img-fluid" />
-                              </a>
-                          </li>
-                          <li class="sosial-media-item">
-                              <a class="sosial-media-link" href="#">
-                                  <img src="img/LinkedIn.png" alt="LinkedIn" class="img-fluid" />
-                              </a>
-                          </li>
-                          <li class="sosial-media-item">
-                              <a class="sosial-media-link" href="#">
-                                  <img src="img/email.png" alt="Email" class="img-fluid" />
-                              </a>
-                          </li>
-                      </ul>
-                  </div>
+            <div class="row">
+                <div class="col">
+                    <div class="content">
+                        <div class="nama">
+                            <h1><?php echo htmlspecialchars($row['nama']); ?></h1>
+                            <hr class="custom-hr">
+                            <div class="sosial-media">
+                                <ul class="sosial-media ms-auto">
+                                    <li class="sosial-media-item">
+                                        <a class="sosial-media-link" href="https://github.com/Nitaa1904" target="_blank">
+                                            <img src="img/github.png" alt="Github" class="img-fluid" />
+                                        </a>
+                                    </li>
+                                    <li class="sosial-media-item">
+                                        <a class="sosial-media-link" href="https://www.instagram.com/nfm_194/" target="_blank">
+                                            <img src="img/ig.png" alt="Instagram" class="img-fluid" />
+                                        </a>
+                                    </li>
+                                    <li class="sosial-media-item">
+                                        <a class="sosial-media-link" href="https://www.linkedin.com/in/nitafitrotul1904" target="_blank">
+                                            <img src="img/LinkedIn.png" alt="LinkedIn" class="img-fluid" />
+                                        </a>
+                                    </li>
+                                    <li class="sosial-media-item">
+                                        <a class="sosial-media-link" href="mailto:nitafitrotul1904@gmail.com">
+                                            <img src="img/email.png" alt="Email" class="img-fluid" />
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gambar-profile">
+                            <img src="img/marah.png" alt="gambar-profile" style="width: 800px; height: 450px;" />
+                        </div>
+                    </div>
                 </div>
-                <div class="gambar-profile">
-                  <img src="img/nita.png" alt="gambar-profile " />
+                <div class="col">
+                    <div class="content-introduction">
+                        <h4>Introduction</h4>
+                        <h2><?php echo htmlspecialchars($row['job']); ?></h2>
+                        <p><?php echo htmlspecialchars($row['konten']); ?></p>
+                        <a href="<?php echo htmlspecialchars($row['cv']); ?>" class="btn btn-danger">Download CV</a>
+                    </div>
                 </div>
-              </div>
             </div>
-            <div class="col">
-              <div class="content-introduction">
-                <h4>introduction</h4>
-                <h2>
-                  <?php echo htmlspecialchars($row['job']); ?>
-                </h2>
-                <p>
-                  <?php echo htmlspecialchars($row['konten']); ?>
-                </p>
-                <button type="button" class="btn btn-danger">
-                  Download CV
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
+        <?php
+    } else {
+        echo "0 results";
+    }
+    ?>
+</div>
+
       
       <div class="skill" id="skill">
           <?php
@@ -199,9 +117,6 @@ if ($conn->connect_error) {
           ?>
         <div class="container">
           <div class="row">
-            <div class="col-12 justify-content-end">
-              <div class="text-right" >Services of my skills</div>
-            </div>
             <div
               class="col-12 col-md-4 d-flex justify-content-center align-items-center"
             >
@@ -211,101 +126,123 @@ if ($conn->connect_error) {
               </h2>
             </div>
             <div class="col-12 col-md-8">
-              <div class="card-container" id="cardContainer">
-                <?php foreach($services as $service): ?>
-                <div class="card" style="width: 18rem;">
-                  <img src="<?php echo htmlspecialchars($service['image_url']); ?>" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><?php echo htmlspecialchars($service['title']); ?></h5>
-                    <p class="card-text"><?php echo htmlspecialchars($service['deskripsi']); ?></p>
-                    <a href="#" class="btn btn-danger">See More</a>
-                  </div>
+                <div class="card-container" id="cardContainer">
+                    <?php foreach($services as $service): ?>
+                    <div class="card" style="overflow: hidden;"> <!-- Ubah width dari 18rem menjadi 20rem -->
+                        <img src="<?php echo htmlspecialchars($service['image_url']); ?>" class="card-img-top" alt="..." style="height: 10rem; object-fit: cover;">
+                        <div class="card-body" style="display: flex; flex-direction: column; justify-content: space-between; height: 12rem;">
+                            <div>
+                                <h5 class="card-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                    <?php echo htmlspecialchars($service['title']); ?>
+                                </h5>
+                                <p class="card-text" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
+                                    <?php echo htmlspecialchars($service['deskripsi']); ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
-              </div>
             </div>
+
+            </div>
+
           </div>
         </div>
       </div>
 
       <!-- Projek -->
       <div class="projek" id="projek">
-        <?php
-        // Mengambil data dari tabel projek
-        $sql_projek = "SELECT * FROM projek";
-        $result_projek = $conn->query($sql_projek);
+    <?php
+    $sql_projek = "SELECT * FROM projek";
+    $result_projek = $conn->query($sql_projek);
 
-        $projek = [];
-        if ($result_projek->num_rows > 0) {
-            while($row_projek = $result_projek->fetch_assoc()) {
-                $projek[] = $row_projek;
+    $projek = [];
+    if ($result_projek->num_rows > 0) {
+        while($row_projek = $result_projek->fetch_assoc()) {
+            $projek[] = $row_projek;
+        }
+    } else {
+        echo "0 results";
+    }
+    ?>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2>Selected Project</h2>
+                <p>My experience in building several projects</p>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <div class="text-right">
+                    <a href="#projek-section" class="btn btn-transparent btn-block" onclick="showSection('projek')">Project</a>
+                    <a href="#sertifikat-section" class="btn btn-transparent btn-block" onclick="showSection('sertifikat')">Certification</a>
+                </div>
+            </div>
+        </div>
+        <div id="projek-section" class="content-section active">
+            <div class="row">
+                <?php foreach($projek as $project): ?>
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch"> <!-- col-md-4 akan membagi row menjadi 3 kolom, mb-4 memberikan margin bawah -->
+                        <div class="card text-right" style="width: 100%; height: 30rem; overflow: hidden;">
+                            <img src="<?php echo htmlspecialchars($project['image_url']); ?>" class="card-img-top" alt="..." style="height: 65%; object-fit: cover;">
+                            <div class="card-body" style="height: 50%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div>
+                                    <h5 class="card-title text-white" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <?php echo htmlspecialchars($project['title']); ?>
+                                    </h5>
+                                    <p class="card-text" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
+                                        <?php echo htmlspecialchars($project['description']); ?>
+                                    </p>
+                                </div>
+                                <a href="<?php echo htmlspecialchars($project['link']); ?>" class="btn btn-danger">Lihat Project</a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <?php
+        // Mengambil data dari tabel sertifikat
+        $sql_sertifikat = "SELECT * FROM sertifikat";
+        $result_sertifikat = $conn->query($sql_sertifikat);
+
+        $sertifikat = [];
+        if ($result_sertifikat->num_rows > 0) {
+            while($row_sertifikat = $result_sertifikat->fetch_assoc()) {
+                $sertifikat[] = $row_sertifikat;
             }
         } else {
             echo "0 results";
         }
         ?>
-        <div class="container">
+        <div id="sertifikat-section" class="content-section">
             <div class="row">
-                <div class="col">
-                    <h2>Selected Project</h2>
-                    <p>My experience in building several projects</p>
-                </div>
-                <div class="col d-flex justify-content-end">
-                    <div class="text-right">
-                        <a href="#projek-section" class="btn btn-transparent btn-block" onclick="showSection('projek')">Project</a>
-                        <a href="#sertifikat-section" class="btn btn-transparent btn-block" onclick="showSection('sertifikat')">Certification</a>
+                <?php foreach($sertifikat as $cert): ?>
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch"> <!-- col-md-4 untuk membagi baris menjadi tiga kolom pada layar medium dan lebih besar -->
+                        <div class="card text-right" style="width: 100%; height: 30rem; overflow: hidden;">
+                            <img src="<?php echo htmlspecialchars($cert['image_url']); ?>" class="card-img-top" alt="..." style="height: 50%; object-fit: cover;">
+                            <div class="card-body" style="height: 50%; display: flex; flex-direction: column; justify-content: space-between;">
+                                <div>
+                                    <h5 class="card-title text-white" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        <?php echo htmlspecialchars($cert['title']); ?>
+                                    </h5>
+                                    <p class="card-text" style="flex-grow: 1; overflow: hidden; text-overflow: ellipsis;">
+                                        <?php echo htmlspecialchars($cert['description']); ?>
+                                    </p>
+                                </div>
+                                <a href="<?php echo htmlspecialchars($cert['link']); ?>" class="btn btn-danger">Lihat Sertifikat</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
             </div>
-            <div id="projek-section" class="content-section active">
-              <div class="row">
-                  <?php foreach($services as $projek): ?>
-                      <div class="col-md-4 mb-4"> <!-- col-md-4 akan membagi row menjadi 3 kolom, mb-4 memberikan margin bawah -->
-                          <div class="card text-right" style="width: 100%; height: 30rem">
-                              <img src="<?php echo htmlspecialchars($projek['image_url']); ?>" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                  <h5 class="card-title text-white"><?php echo htmlspecialchars($projek['title']); ?></h5>
-                                  <p class="card-text">
-                                      <?php echo htmlspecialchars($projek['deskripsi']); ?>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  <?php endforeach; ?>
-              </div>
-            </div>
-            <?php
-            // Mengambil data dari tabel sertifikat
-            $sql_sertifikat = "SELECT * FROM sertifikat";
-            $result_sertifikat = $conn->query($sql_sertifikat);
-
-            $sertifikat = [];
-            if ($result_sertifikat->num_rows > 0) {
-                while($row_sertifikat = $result_sertifikat->fetch_assoc()) {
-                    $sertifikat[] = $row_sertifikat;
-                }
-            } else {
-                echo "0 results";
-            }
-            ?>
-            <div id="sertifikat-section" class="content-section">
-              <div class="row">
-                  <?php foreach($services as $index => $sertifikat): ?>
-                      <div class="col-md-4 mb-4"> <!-- col-md-4 untuk membagi baris menjadi tiga kolom pada layar medium dan lebih besar -->
-                          <div class="card text-right" style="width: 100%; height: 30rem">
-                              <img src="<?php echo htmlspecialchars($sertifikat['image_url']); ?>" class="card-img-top" alt="...">
-                              <div class="card-body">
-                                  <h5 class="card-title text-white"><?php echo htmlspecialchars($sertifikat['title']); ?></h5>
-                                  <p class="card-text">
-                                      <?php echo htmlspecialchars($sertifikat['description']); ?>
-                                  </p>
-                              </div>
-                          </div>
-                      </div>
-                  <?php endforeach; ?>
-              </div>
-          </div>
         </div>
+    </div>
+</div>
+
+     
+
       </div>
       <div class="story" id="story">
         <div class="container">
@@ -360,43 +297,7 @@ if ($conn->connect_error) {
       </div>
     </section>
 
-    <footer>
-      <div class="footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-md-left">
-              <h2>
-                IT'S NOT NOW <br />THEN <br />
-                WHEN
-              </h2>
-            </div>
-            <div class="col-md-6 text-md-left">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <button type="button" class="btn btn-danger">Lets Talk</button>
-            </div>
-          </div>
-        </div>
-        <hr class="custom-hr">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <img src="img/13.png" alt="" width="40" height="40">
-            </div>
-            <div class="col text-center">
-              <a href="#" class="text-link">Project</a>
-              <a href="#" class="text-link">My Story</a>
-              <a href="#" class="text-link">Blog</a>
-          </div>
-            <div class="col d-flex justify-content-end">
-              <p class="text-md-right">Copyright@nitaaa2024</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <?php include_once("inc_footer.php")?>
     <!-- JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

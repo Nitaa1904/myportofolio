@@ -129,17 +129,20 @@ body p {
 
 .gambar-profile {
   position: absolute;
-  top: 130px; /* Menggeser ke posisi y 199px */
-  left: 250px; /* Menggeser ke posisi x 350px */
+  top: 182px; /* Menggeser ke posisi y 199px */
+  left: 150px; /* Menggeser ke posisi x 350px */
   width: 100%; /* Sesuaikan dengan kebutuhan lebar kontainer */
   max-width: 400px; /* Atau tetapkan ukuran maksimum yang diinginkan */
 }
 
 .gambar-profile img {
-  width: 100%; /* Gambar akan menyesuaikan dengan lebar kontainer induknya */
+  width: 400px; /* Gambar akan menyesuaikan dengan lebar kontainer induknya */
   height: auto; /* Menjaga rasio aspek gambar */
   display: block; /* Menghilangkan celah di bawah gambar jika menggunakan inline-block */
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+}
+.gambar-profile img:hover {
+  transform: scale(1.1);
 }
 
 .nama {
@@ -211,11 +214,11 @@ body p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 .service .card {
-  flex: 1 1 calc(33.333% - 20px); /* Adjust the width of the cards */
-  max-width: calc(33.333% - 20px);
+  flex: 1 1 calc(34.333% - 25x); /* Adjust the width of the cards */
+  max-width: calc(34.333% - 25px);
   box-sizing: border-box;
   background-color: #191a2e;
   color: #fff;
@@ -230,7 +233,6 @@ body p {
   text-align: center;
 }
 .card {
-  width: 18rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -329,6 +331,7 @@ body p {
   max-height: 400px; /* Adjust this height as needed */
   overflow-y: auto;
 }
+
 .story .scrollable {
   max-height: 400px; /* Adjust this height as needed */
   overflow-y: auto;
